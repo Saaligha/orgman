@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Helper {
 
-    public static String generateRandomGivenSuffix(String suffix) {
+     public static String generateRandomGivenSuffix(String suffix) {
         return suffix + "-" + UUID.randomUUID().toString();
     }
 
@@ -14,13 +14,13 @@ public class Helper {
 
     public static String getSuffixFromClassName(Class<?> aClass) {
         String className = getClassName(aClass);
-        throw new UnsupportedOperationException("Not yet supported!");
-        /**
-         * Your implementation goes here
-         *
-         * INSTRUCTION
-         * 1. Remove line 17 [throw new UnsupportedOperationException("Not yet supported!");]
-         * 2. Get the capitalized letter(s) from the className and return it.
-         */
+        String Capital = "";
+
+        for(int x=0; x <className.length(); x++){
+            if(Character.isUpperCase(className.charAt(x))){
+                  Capital += " " +className.charAt(x);
+            }
+        }
+        return Capital;
     }
 }

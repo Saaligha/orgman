@@ -30,7 +30,7 @@ public class RaceRepositoryImpl implements RaceRepository {
 
     @Override
     public Race read(String raceId) {
-        return raceDB.stream().filter(race -> Boolean.parseBoolean(race.getRaceId())).findAny().orElse(null);
+        return raceDB.stream().filter(race -> (race.getRaceId()== raceId)).findAny().orElse(null);
 
     }
 

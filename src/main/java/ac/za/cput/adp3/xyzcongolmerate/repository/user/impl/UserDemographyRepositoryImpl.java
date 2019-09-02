@@ -30,7 +30,7 @@ public class UserDemographyRepositoryImpl implements UserDemographyRepository {
 
     @Override
     public UserDemography read(String userEmail) {
-        return userDemographyDB.stream().filter(userDemography -> Boolean.parseBoolean(userDemography.getUserEmail())).findAny().orElse(null);
+        return userDemographyDB.stream().filter(user -> user.getUserEmail()== userEmail).findAny().orElse(null);
 
     }
 

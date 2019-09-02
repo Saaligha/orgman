@@ -29,7 +29,7 @@ public class RoleRepositoryImpl implements RoleRepository {
 
     @Override
     public Role read(String roleId) {
-        return roleDB.stream().filter(role -> Boolean.parseBoolean(role.getRoleId().trim())).findAny().orElse(null);
+        return roleDB.stream().filter(role -> (role.getRoleId()== roleId.trim())).findAny().orElse(null);
     }
 
 

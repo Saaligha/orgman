@@ -31,8 +31,7 @@ public class OrganisationRepositoryImpl implements OrganisationRepository {
     @Override
     public Organisation read(String orgCode) {
         String integer;
-        return organisationDB.stream().filter(organisation -> Boolean.parseBoolean((organisation.getOrgCode().trim()))).findAny().orElse(null);
-
+        return organisationDB.stream().filter(org -> org.getOrgCode()== orgCode).findAny().orElse(null);
     }
 
 

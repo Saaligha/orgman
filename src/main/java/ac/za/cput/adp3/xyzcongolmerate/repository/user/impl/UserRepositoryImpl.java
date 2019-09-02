@@ -20,7 +20,7 @@ public class UserRepositoryImpl implements UserRepository {
         return userRepository;
     }
 
-    //TODO: Implement body
+
     @Override
     public User create(User user) {
         userDB.add(user);
@@ -30,7 +30,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User read(String email) {
-        return userDB.stream().filter(user -> Boolean.parseBoolean(user.getUserEmail())).findAny().orElse(null);
+        return userDB.stream().filter(user -> user.getUserEmail()== email).findAny().orElse(null);
 
     }
 

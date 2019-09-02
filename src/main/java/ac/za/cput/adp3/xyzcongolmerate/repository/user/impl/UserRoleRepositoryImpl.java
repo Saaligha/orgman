@@ -30,13 +30,19 @@ public class UserRoleRepositoryImpl implements UserRoleRepository {
 
     @Override
     public UserRole read(UserRole userRole) {
-        return userRoleDB.stream().filter(userRole1 -> Boolean.parseBoolean(String.valueOf(userRole1.getRoleId()))).findAny().orElse(null);
+        for (UserRole user : userRoleDB) {
+            if (user.getRoleId().equals(userRole)) {
+                return user;
+            }
+        }
+        return null;
+
     }
 
 
     @Override
     public UserRole update(UserRole userRole) {
-        UserRole toDelete = read(userRole.getRoleId());
+        UserRole toDelete = this.read(userRole);
 
         if(toDelete != null) {
             userRoleDB.remove(toDelete);

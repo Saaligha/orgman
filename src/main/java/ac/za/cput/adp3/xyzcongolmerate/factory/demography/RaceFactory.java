@@ -10,15 +10,9 @@ public class RaceFactory {
 
     public static Race buildRace(String raceDescription) {
 
-        /**
-         * Your implementation goes here
-         * INSTRUCTIONS
-         * 1. Remove line [//TODO: implement method body ONLY!]
-         * 2. Remove line [throw new UnsupportedOperationException("Not supported yet.");]
-         * 3. Generate random id using SUFFIX (Hint: call generateRandomGivenSuffix method in Helper class)
-         * 4. Build and return an object of Race
-         */
+
         return new Race.Builder()
+                .raceId(SUFFIX)
                 .raceDescription(raceDescription)
                 .build();
     }

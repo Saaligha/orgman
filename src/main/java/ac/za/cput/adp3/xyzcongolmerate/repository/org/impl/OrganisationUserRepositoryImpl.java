@@ -29,7 +29,7 @@ public class OrganisationUserRepositoryImpl implements OrganisationUserRepositor
 
     @Override
     public OrganisationUser read(String orgCode, String userEmail) {
-        return organisationUserDB.stream().filter(organisationUser -> Boolean.parseBoolean(organisationUser.getOrgCode())).findAny().orElse(null);
+        return organisationUserDB.stream().filter(org -> org.getOrgCode()== orgCode && org.getUserEmail() == userEmail ).findAny().orElse(null);
 
     }
 
