@@ -20,33 +20,40 @@ public class GenderRepositoryImpl implements GenderRepository {
         return genderRepository;
     }
 
-    //TODO: Implement body
     @Override
     public Gender create(Gender gender) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        genderDB.add(gender);
+        return gender;
     }
 
-    //TODO: Implement body
+
     @Override
     public Gender read(String genderId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return genderDB.stream().filter(gender -> Boolean.parseBoolean(gender.getGenderId())).findAny().orElse(null);
     }
 
-    //TODO: Implement body
     @Override
     public Gender update(Gender gender) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Gender toDel = read(gender.getGenderId());
+
+        if (toDel == null) {
+            genderDB.remove(gender);
+            return create(gender);
+        }
+        return null;
     }
 
-    //TODO: Implement body
     @Override
     public void delete(String genderId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Gender toDel = read(genderId);
+        if(toDel!=null){
+            genderDB.remove(toDel);
+        }
     }
 
-    //TODO: Implement body
+
     @Override
     public Set<Gender> getAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return genderDB;
     }
 }

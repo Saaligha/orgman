@@ -20,33 +20,47 @@ public class RaceRepositoryImpl implements RaceRepository {
         return raceRepository;
     }
 
-    //TODO: Implement body
+
     @Override
     public Race create(Race race) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        raceDB.add(race);
+        return race;
     }
 
-    //TODO: Implement body
+
     @Override
     public Race read(String raceId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return raceDB.stream().filter(race -> Boolean.parseBoolean(race.getRaceId())).findAny().orElse(null);
+
     }
 
-    //TODO: Implement body
+
     @Override
     public Race update(Race race) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Race toDelete = read(race.getRaceId());
+
+        if(toDelete != null) {
+            raceDB.remove(toDelete);
+            return create(race);
+        }
+        return null;
     }
 
-    //TODO: Implement body
+
     @Override
     public void delete(String raceId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        {
+
+            Race toDelete = read(raceId);
+            if (toDelete != null){
+                raceDB.remove(toDelete);
+            }
+
+        }
     }
 
-    //TODO: Implement body
     @Override
     public Set<Race> getAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return raceDB;
     }
 }

@@ -20,33 +20,44 @@ public class UserRoleRepositoryImpl implements UserRoleRepository {
         return userRoleRepository;
     }
 
-    //TODO: Implement body
+
     @Override
     public UserRole create(UserRole userRole) {
-        throw new UnsupportedOperationException("Not supported yet.");
+       userRoleDB.add(userRole);
+       return userRole;
     }
 
-    //TODO: Implement body
+
     @Override
     public UserRole read(UserRole userRole) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return userRoleDB.stream().filter(userRole1 -> Boolean.parseBoolean(String.valueOf(userRole1.getRoleId()))).findAny().orElse(null);
     }
 
-    //TODO: Implement body
+
     @Override
     public UserRole update(UserRole userRole) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        UserRole toDelete = read(userRole.getRoleId());
+
+        if(toDelete != null) {
+            userRoleDB.remove(toDelete);
+            return create(userRole);
+        }
+        return null;
     }
 
-    //TODO: Implement body
+
     @Override
     public void delete(UserRole userRole) {
-        throw new UnsupportedOperationException("Not supported yet.");
+
+        UserRole toDelete = read(userRole);
+        if (toDelete != null){
+            userRoleDB.remove(toDelete);
+        }
     }
 
-    //TODO: Implement body
+
     @Override
     public Set<UserRole> getAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return userRoleDB;
     }
 }
