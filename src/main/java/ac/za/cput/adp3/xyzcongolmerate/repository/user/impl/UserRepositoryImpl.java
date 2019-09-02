@@ -46,7 +46,6 @@ public class UserRepositoryImpl implements UserRepository {
         return null;
     }
 
-    //TODO: Implement body
     @Override
     public void delete(String email) {
         User toDelete = read(email);

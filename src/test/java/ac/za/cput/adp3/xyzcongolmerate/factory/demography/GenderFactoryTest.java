@@ -21,6 +21,8 @@ public class GenderFactoryTest {
          */
 
             Gender gender = GenderFactory.buildGender("F");
-            Assert.assertNotNull(gender);
+        Assert.assertNotNull(gender);
+            Assert.assertNotNull(gender.getGenderId());
+
         }
     }

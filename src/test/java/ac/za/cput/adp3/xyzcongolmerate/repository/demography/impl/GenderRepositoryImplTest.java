@@ -1,5 +1,8 @@
 package ac.za.cput.adp3.xyzcongolmerate.repository.demography.impl;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.demography.Gender;
+import ac.za.cput.adp3.xyzcongolmerate.repository.demography.GenderRepository;
+import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -9,6 +12,13 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GenderRepositoryImplTest {
 
+        private GenderRepository repository;
+        private Gender gender;
+
+    @Before
+    public void setUp() throws Exception {
+        this.repository = GenderRepositoryImpl.genderRepository();
+    }
     @Test
     public void a_create() {
         throw new UnsupportedOperationException("Not supported yet.");
