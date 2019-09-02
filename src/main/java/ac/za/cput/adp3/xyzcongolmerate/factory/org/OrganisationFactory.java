@@ -7,9 +7,9 @@ public class OrganisationFactory {
 
     private static final String SUFFIX = Helper.getSuffixFromClassName(OrganisationFactory.class); // Expecting OF from (O)rganisation(F)actory.
 
-    //TODO: implement method body ONLY!
+
     public static Organisation buildOrganisation(String organisationName) {
-        throw new UnsupportedOperationException("Not supported yet.");
+
         /**
          * Your implementation goes here
          * INSTRUCTIONS
@@ -18,5 +18,9 @@ public class OrganisationFactory {
          * 3. Generate random id using SUFFIX (Hint: call generateRandomGivenSuffix method in Helper class)
          * 4. Build and return an object of Organisation
          */
+
+        return new Organisation.Builder()
+                .orgName(organisationName)
+                .build();
     }
 }
