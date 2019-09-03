@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 
 public class UserFactoryTest {
 
-    //TODO: implement method body ONLY!
     @Test
     public void buildUser() {
         User user = UserFactory.buildUser("user1@gmail.com", "Saaligha", "Logday");
@@ -17,5 +16,8 @@ public class UserFactoryTest {
         Assert.assertNotNull(user.getFirstName());
         Assert.assertNotNull(user.getLastName());
         Assert.assertNotNull(user.getUserEmail());
+        System.out.println("The user email is: "+user.getUserEmail()+
+                            "The user's name is: " +user.getFirstName()+
+                            "The user's surname is :" +user.getLastName() );
     }
 }

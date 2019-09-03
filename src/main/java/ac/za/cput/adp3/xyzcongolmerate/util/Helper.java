@@ -21,6 +21,6 @@ public class Helper {
                   Capital += " " +className.charAt(x);
             }
         }
-        return Capital;
+        return Capital.replaceAll("\\s + ", "");
     }
 }

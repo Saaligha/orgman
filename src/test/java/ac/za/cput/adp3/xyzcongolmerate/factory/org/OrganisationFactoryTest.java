@@ -16,5 +16,6 @@ public class OrganisationFactoryTest {
         Assert.assertNotNull(org);
         Assert.assertNotNull(org.getOrgCode());
         Assert.assertNotNull(org.hashCode());
+        System.out.println("The organisation code is: "+org.getOrgCode());
     }
 }

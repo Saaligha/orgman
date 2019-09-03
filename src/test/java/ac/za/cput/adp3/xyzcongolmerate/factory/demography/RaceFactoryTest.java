@@ -13,6 +13,7 @@ public class RaceFactoryTest {
         Race race = RaceFactory.buildRace("Indian");
         Assert.assertNotNull(race);
         Assert.assertNotNull(race.getRaceId());
+        System.out.println("The race is is: " + race.getRaceId());
 
     }
 }

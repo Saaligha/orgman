@@ -15,5 +15,6 @@ public class RoleFactoryTest {
         Assert.assertNotNull(role);
         Assert.assertNotNull(role.getRoleId());
         Assert.assertNotNull(role.hashCode());
+        System.out.println("The role id is: " +role.getRoleId());
     }
 }

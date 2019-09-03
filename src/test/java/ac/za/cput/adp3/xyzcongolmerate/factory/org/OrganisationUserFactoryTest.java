@@ -11,10 +11,11 @@ public class OrganisationUserFactoryTest {
 
     @Test
     public void buildOrganisationUser() {
-        OrganisationUser orgUser = OrganisationUserFactory.buildOrganisationUser("165", "logday.cput.ac");
+        OrganisationUser orgUser = OrganisationUserFactory.buildOrganisationUser("165", "logday@cput.ac");
         Assert.assertNotNull(orgUser);
         Assert.assertNotNull(orgUser.getOrgCode());
         Assert.assertNotNull(orgUser.getUserEmail());
         Assert.assertNotNull(orgUser.hashCode());
+        System.out.println("The organisation user's email is: " +orgUser.getUserEmail());
     }
 }
