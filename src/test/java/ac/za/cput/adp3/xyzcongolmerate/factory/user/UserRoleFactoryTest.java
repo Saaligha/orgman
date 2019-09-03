@@ -17,6 +17,6 @@ public class UserRoleFactoryTest {
         Assert.assertNotNull(user.getUserEmail());
         Assert.assertNotNull(user.getOrgCode());
         Assert.assertNotNull(user.hashCode());
-
+        System.out.println("User id is: " +user.getUserEmail());
     }
 }

@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Saaligha_orgman" />
         <module name="orgman" />
+        <module name="Saaligha_orgman" />
       </profile>
     </annotationProcessing>
   </component>
