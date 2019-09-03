@@ -12,7 +12,7 @@ public class GenderFactory {
 
 
         return new Gender.Builder()
-                .genderId(SUFFIX)
+                .genderId(Helper.generateRandomGivenSuffix(SUFFIX))
                 .genderDescription(genderDescription)
                 .build();
     }

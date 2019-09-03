@@ -11,7 +11,7 @@ public class RoleFactory {
     public static Role buildRole(String roleName) {
 
         return new Role.Builder()
-                .roleId(SUFFIX)
+                .roleId(Helper.generateRandomGivenSuffix(SUFFIX))
                 .roleName(roleName)
                 .build();
     }

@@ -12,7 +12,7 @@ public class OrganisationFactory {
 
 
         return new Organisation.Builder()
-                .orgCode(SUFFIX)
+                .orgCode(Helper.generateRandomGivenSuffix(SUFFIX))
                 .orgName(organisationName)
                 .build();
     }

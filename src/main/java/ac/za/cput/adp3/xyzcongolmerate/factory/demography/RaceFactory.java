@@ -12,7 +12,7 @@ public class RaceFactory {
 
 
         return new Race.Builder()
-                .raceId(SUFFIX)
+                .raceId(Helper.generateRandomGivenSuffix(SUFFIX))
                 .raceDescription(raceDescription)
                 .build();
     }
